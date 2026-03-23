@@ -1,6 +1,8 @@
 📂 Dumbo (Thư mục gốc)
 
--📂 client (Chứa 5 mục dành cho khách)
+-📂frontend
+
+--📂 client (Chứa 5 mục dành cho khách)
 
 (+) 📂 Home
 
@@ -12,7 +14,7 @@
 
 (+) 📂 Login (Nơi chứa cả đăng nhập và đăng ký)
 
--📂 admin (Chứa trang Quản trị)
+--📂 admin (Chứa trang Quản trị)
 
 (+) 📂 Dashboard
 
