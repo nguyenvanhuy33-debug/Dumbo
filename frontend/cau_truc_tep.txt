@@ -1,0 +1,21 @@
+📂 Dumbo (Thư mục gốc)
+
+-📂 client (Chứa 5 mục dành cho khách)
+
+(+) 📂 Home
+
+(+) 📂 Store
+
+(+) 📂 Checkout (Nơi chứa cả phần mua hàng và profile)
+
+(+) 📂 Support
+
+(+) 📂 Login (Nơi chứa cả đăng nhập và đăng ký)
+
+-📂 admin (Chứa trang Quản trị)
+
+(+) 📂 Dashboard
+
+(+) 📂 Products (Quản lý thú cưng)
+
+(+) 📂 Orders (Quản lý đơn hàng)
