@@ -9,10 +9,10 @@
     --mint-100: #e7fff7;
     --purple-200: #d9ccff;
     --accent-strong: #2f9c89;
-    --text-main: #30485a;
+    --text-main: #d4e0e8;
     --text-soft: #5d778a;
-    --line: rgba(124, 157, 176, 0.28);
-    --shadow-soft: 0 14px 30px rgba(90, 120, 139, 0.18);
+    --line: rgba(171, 197, 211, 0.28);
+    --shadow-soft: 0 14px 30px rgba(162, 177, 186, 0.18);
 }
 
 body {
@@ -97,7 +97,7 @@ button:hover {
     color: #fff;
     border: 0;
     padding-inline: 18px;
-    box-shadow: 0 10px 16px rgba(70, 165, 171, 0.35);
+    box-shadow: 0 10px 16px rgba(162, 187, 189, 0.35);
 }
 
 .hero {
