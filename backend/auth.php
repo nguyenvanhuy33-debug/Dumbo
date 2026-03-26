@@ -1,26 +1,52 @@
 <?php
 include "config.php";
 
-// Hàm xử lý đăng nhập
-function login() {
-
-    // Lấy dữ liệu từ request
+// Hàm đăng ký
+function register() {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Kiểm tra dữ liệu rỗng
+    // Kiểm tra dữ liệu
     if ($username == "" || $password == "") {
         echo "Vui lòng nhập đầy đủ";
         return;
     }
 
-    // Truy vấn kiểm tra tài khoản
+    // Kiểm tra tài khoản đã tồn tại chưa
+    $check = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($GLOBALS['conn'], $check);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "Tài khoản đã tồn tại";
+        return;
+    }
+
+    // Thêm user mới
+    $sql = "INSERT INTO users (username, password) 
+            VALUES ('$username', '$password')";
+
+    if (mysqli_query($GLOBALS['conn'], $sql)) {
+        echo "Đăng ký thành công";
+    } else {
+        echo "Lỗi đăng ký";
+    }
+}
+
+// Hàm đăng nhập
+function login() {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if ($username == "" || $password == "") {
+        echo "Vui lòng nhập đầy đủ";
+        return;
+    }
+
     $sql = "SELECT * FROM users 
             WHERE username='$username' AND password='$password'";
     
     $result = mysqli_query($GLOBALS['conn'], $sql);
 
-    // Kiểm tra kết quả
     if (mysqli_num_rows($result) > 0) {
         echo "Đăng nhập thành công";
     } else {
@@ -28,8 +54,15 @@ function login() {
     }
 }
 
-// Gọi hàm khi có POST
+// Xử lý request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    login();
+
+    $action = $_POST['action'];
+
+    if ($action == "register") {
+        register();
+    } else if ($action == "login") {
+        login();
+    }
 }
 ?>
