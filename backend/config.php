@@ -2,7 +2,7 @@
 // Thông tin kết nối database
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "123456";
 $database = "dumbo";
 
 // Tạo kết nối
