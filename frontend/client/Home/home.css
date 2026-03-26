@@ -103,9 +103,9 @@ button:focus-visible {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.58);
     box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(3px);
 }
 
 .brand {
@@ -156,9 +156,9 @@ button:focus-visible {
     border: 1px solid var(--line);
     border-radius: calc(var(--radius-lg) + 2px);
     padding: 24px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.54);
     box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 .eyebrow {
@@ -231,7 +231,7 @@ button:focus-visible {
 }
 
 .hero-card {
-    background: linear-gradient(160deg, rgba(244, 249, 253, 0.92) 0%, rgba(235, 244, 251, 0.92) 100%);
+    background: rgba(255, 255, 255, 0.52);
 }
 
 .hero-card-title {
@@ -259,7 +259,7 @@ button:focus-visible {
 .products-section {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.56);
     padding: 22px;
     box-shadow: var(--shadow-soft);
 }
@@ -295,7 +295,7 @@ button:focus-visible {
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 16px;
-    background: linear-gradient(140deg, rgba(248, 252, 255, 0.94) 0%, rgba(238, 247, 252, 0.92) 100%);
+    background: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -386,7 +386,7 @@ button:focus-visible {
     top: 118px;
     z-index: 5;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.56);
     box-shadow: var(--shadow-soft);
     border-radius: var(--radius-lg);
     padding: 10px;
@@ -400,7 +400,7 @@ button:focus-visible {
     border-radius: 12px;
     width: 46px;
     height: 46px;
-    background: linear-gradient(160deg, rgba(248, 241, 255, 0.95) 0%, rgba(232, 246, 255, 0.95) 100%);
+    background: rgba(255, 255, 255, 0.48);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,7 +432,7 @@ button:focus-visible {
 .footer {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.58);
     padding: 20px;
     box-shadow: var(--shadow-soft);
 }
