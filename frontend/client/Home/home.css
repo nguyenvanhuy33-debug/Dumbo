@@ -3,16 +3,15 @@
 }
 
 :root {
-    --pink-100: #f8f2ff;
-    --pink-200: #efe7ff;
-    --peach-100: #fff1de;
-    --mint-100: #e7fff7;
-    --purple-200: #d9ccff;
-    --accent-strong: #2f9c89;
-    --text-main: #d4e0e8;
-    --text-soft: #5d778a;
-    --line: rgba(171, 197, 211, 0.28);
-    --shadow-soft: 0 14px 30px rgba(162, 177, 186, 0.18);
+    --anime-indigo: #321a63;
+    --anime-violet: #6f3bce;
+    --anime-cyan: #3fd3ff;
+    --anime-pink: #ff6fcf;
+    --anime-soft: #1d1636;
+    --text-main: #f4f3ff;
+    --text-soft: #c6c2ec;
+    --line: rgba(180, 151, 255, 0.38);
+    --shadow-soft: 0 14px 34px rgba(31, 10, 66, 0.52);
 }
 
 body {
@@ -20,9 +19,26 @@ body {
     color: var(--text-main);
     font-family: "Nunito", "Segoe UI", sans-serif;
     background:
-        linear-gradient(rgba(255, 255, 255, 0.95), rgba(252, 254, 255, 0.97)),
+        radial-gradient(circle at 10% 15%, rgba(255, 111, 207, 0.28) 0, rgba(255, 111, 207, 0) 35%),
+        radial-gradient(circle at 88% 22%, rgba(63, 211, 255, 0.28) 0, rgba(63, 211, 255, 0) 38%),
+        linear-gradient(135deg, rgba(22, 12, 48, 0.84), rgba(29, 14, 63, 0.84)),
         url("https://thietkeshop247.com.vn/kcfinder/upload/images/Thiet-ke-shop-thu-cung-nho.jpg(2).jpg") center/cover fixed no-repeat;
     min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 2px,
+        rgba(255, 255, 255, 0) 2px,
+        rgba(255, 255, 255, 0) 18px
+    );
+    mix-blend-mode: soft-light;
 }
 
 .page {
@@ -30,6 +46,19 @@ body {
     margin: 0 auto;
     padding: 18px 0 28px;
     position: relative;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: 90px;
+    right: 120px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(111, 59, 206, 0.38), rgba(111, 59, 206, 0));
+    filter: blur(4px);
+    pointer-events: none;
 }
 
 a {
@@ -46,7 +75,7 @@ button {
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 10px 16px;
-    background: linear-gradient(170deg, #ffffff 0%, #f8fdff 100%);
+    background: linear-gradient(160deg, rgba(111, 59, 206, 0.38) 0%, rgba(63, 211, 255, 0.22) 100%);
     color: var(--text-main);
     font-weight: 700;
     cursor: pointer;
@@ -55,7 +84,7 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(103, 152, 179, 0.22);
+    box-shadow: 0 10px 20px rgba(94, 55, 187, 0.46);
 }
 
 .topbar {
@@ -66,7 +95,7 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 22px;
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(30, 22, 58, 0.82);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(8px);
 }
@@ -85,7 +114,7 @@ button:hover {
 
 .main-nav a {
     border: 1px solid var(--line);
-    background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%);
+    background: linear-gradient(180deg, rgba(39, 24, 78, 0.92) 0%, rgba(61, 39, 117, 0.92) 100%);
     border-radius: 999px;
     padding: 8px 14px;
     font-weight: 700;
@@ -93,11 +122,11 @@ button:hover {
 
 .auth-btn {
     border-radius: 999px;
-    background: linear-gradient(130deg, #31b9a0 0%, #77c8ee 100%);
+    background: linear-gradient(130deg, var(--anime-pink) 0%, var(--anime-cyan) 100%);
     color: #fff;
     border: 0;
     padding-inline: 18px;
-    box-shadow: 0 10px 16px rgba(162, 187, 189, 0.35);
+    box-shadow: 0 10px 18px rgba(95, 83, 214, 0.6);
 }
 
 .hero {
@@ -112,7 +141,7 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 24px;
     padding: 22px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(27, 19, 54, 0.82);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(7px);
 }
@@ -122,8 +151,8 @@ button:hover {
     margin: 0;
     padding: 6px 12px;
     border-radius: 999px;
-    background: var(--mint-100);
-    color: var(--text-soft);
+    background: rgba(63, 211, 255, 0.2);
+    color: #bff4ff;
     font-weight: 700;
     font-size: 0.82rem;
 }
@@ -151,15 +180,20 @@ button:hover {
 .search-box input {
     border: 1px solid var(--line);
     border-radius: 14px;
-    background: #fff;
+    background: rgba(18, 13, 36, 0.85);
+    color: var(--text-main);
     padding: 12px 14px;
     outline: none;
+}
+
+.search-box input::placeholder {
+    color: #a79ad4;
 }
 
 .search-box button {
     border: 0;
     border-radius: 14px;
-    background: linear-gradient(130deg, #34b99c 0%, #68c1ea 100%);
+    background: linear-gradient(130deg, #ff6fcf 0%, #55d4ff 100%);
     color: #fff;
 }
 
@@ -172,8 +206,8 @@ button:hover {
 
 .hero-highlights span {
     border: 1px solid var(--line);
-    background: linear-gradient(160deg, #ffffff 0%, #f0fff9 100%);
-    color: var(--text-soft);
+    background: linear-gradient(160deg, rgba(45, 27, 90, 0.9) 0%, rgba(28, 64, 96, 0.9) 100%);
+    color: #d0f6ff;
     font-weight: 700;
     border-radius: 999px;
     font-size: 0.84rem;
@@ -181,7 +215,7 @@ button:hover {
 }
 
 .hero-card {
-    background: linear-gradient(160deg, var(--pink-100) 0%, var(--peach-100) 100%);
+    background: linear-gradient(160deg, rgba(103, 42, 167, 0.86) 0%, rgba(34, 76, 128, 0.86) 100%);
 }
 
 .hero-card-title {
@@ -193,7 +227,7 @@ button:hover {
 .hero-card ul {
     margin: 0;
     padding-left: 18px;
-    color: #6c557e;
+    color: #efe6ff;
     line-height: 1.6;
 }
 
@@ -202,7 +236,7 @@ button:hover {
     border: 0;
     width: 100%;
     color: #fff;
-    background: linear-gradient(130deg, #31b79d 0%, #6cc0e5 100%);
+    background: linear-gradient(130deg, #ff80d7 0%, #66d7ff 100%);
 }
 
 .category-section,
@@ -210,7 +244,7 @@ button:hover {
     margin-top: 18px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(26, 18, 50, 0.82);
     padding: 18px;
     box-shadow: var(--shadow-soft);
 }
@@ -231,7 +265,7 @@ button:hover {
 .category-grid button {
     border-radius: 14px;
     padding: 14px 10px;
-    background: linear-gradient(130deg, #ffffff 0%, var(--mint-100) 100%);
+    background: linear-gradient(130deg, rgba(61, 31, 122, 0.9) 0%, rgba(33, 91, 131, 0.9) 100%);
 }
 
 .product-grid {
@@ -244,7 +278,7 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 14px;
-    background: linear-gradient(140deg, #fff 0%, #fbfeff 100%);
+    background: linear-gradient(140deg, rgba(47, 26, 90, 0.82) 0%, rgba(26, 61, 95, 0.82) 100%);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -254,7 +288,7 @@ button:hover {
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 18px rgba(99, 142, 167, 0.22);
+    box-shadow: 0 14px 20px rgba(89, 58, 187, 0.5);
 }
 
 .thumb {
@@ -265,27 +299,27 @@ button:hover {
 }
 
 .thumb-1 {
-    background: linear-gradient(140deg, #ffe7f2 0%, #fff8ea 100%);
+    background: linear-gradient(140deg, #8a2be2 0%, #ff6fcf 100%);
 }
 
 .thumb-2 {
-    background: linear-gradient(140deg, #e6fff7 0%, #f6ecff 100%);
+    background: linear-gradient(140deg, #00c9ff 0%, #7a4dff 100%);
 }
 
 .thumb-3 {
-    background: linear-gradient(140deg, #ffe6f1 0%, #f3f0ff 100%);
+    background: linear-gradient(140deg, #ff5ea8 0%, #5d68ff 100%);
 }
 
 .thumb-4 {
-    background: linear-gradient(140deg, #fff4de 0%, #eefbff 100%);
+    background: linear-gradient(140deg, #ff9f43 0%, #36d1dc 100%);
 }
 
 .thumb-5 {
-    background: linear-gradient(140deg, #eafff3 0%, #fff1fb 100%);
+    background: linear-gradient(140deg, #00d2a8 0%, #5b86e5 100%);
 }
 
 .thumb-6 {
-    background: linear-gradient(140deg, #f3ebff 0%, #fff4e7 100%);
+    background: linear-gradient(140deg, #c471f5 0%, #12c2e9 100%);
 }
 
 .product-card .title {
@@ -308,14 +342,14 @@ button:hover {
 }
 
 .card-meta strong {
-    color: #355770;
+    color: #e5e8ff;
 }
 
 .card-meta span {
     font-size: 0.75rem;
     border-radius: 999px;
-    background: #e5faf5;
-    color: var(--accent-strong);
+    background: rgba(255, 255, 255, 0.14);
+    color: #90f0ff;
     font-weight: 800;
     padding: 4px 8px;
 }
@@ -324,7 +358,7 @@ button:hover {
     margin-top: 0;
     border-radius: 14px;
     padding: 8px 10px;
-    border: 1px solid rgba(72, 170, 158, 0.45);
+    border: 1px solid rgba(143, 202, 255, 0.55);
 }
 
 .social-dock {
@@ -333,7 +367,7 @@ button:hover {
     top: 118px;
     z-index: 5;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(20, 14, 42, 0.85);
     box-shadow: var(--shadow-soft);
     border-radius: 18px;
     padding: 10px;
@@ -347,7 +381,7 @@ button:hover {
     border-radius: 12px;
     width: 46px;
     height: 46px;
-    background: linear-gradient(160deg, #fff 0%, #f8fffc 100%);
+    background: linear-gradient(160deg, rgba(62, 34, 122, 0.9) 0%, rgba(31, 79, 126, 0.9) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,14 +395,26 @@ button:hover {
 .social-icon {
     width: 22px;
     height: 22px;
-    fill: #2f9f8d;
+    fill: #e8f6ff;
+}
+
+.social-dock a:nth-child(1) .social-icon {
+    fill: #ff5a76;
+}
+
+.social-dock a:nth-child(2) .social-icon {
+    fill: #6fa7ff;
+}
+
+.social-dock a:nth-child(3) .social-icon {
+    fill: #ff82cf;
 }
 
 .footer {
     margin-top: 18px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.99);
+    background: rgba(24, 17, 47, 0.84);
     padding: 18px 20px;
     box-shadow: var(--shadow-soft);
 }
@@ -379,7 +425,7 @@ button:hover {
 }
 
 .footer span {
-    color: #2f9f8d;
+    color: #79daff;
     font-weight: 800;
 }
 
