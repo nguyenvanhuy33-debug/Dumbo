@@ -1,9 +1,9 @@
 <?php
 include "config.php";
-/*
- * Hàm lấy danh sách sản phẩm
- * Có thể lọc theo category: thuc-an, do-choi, phu-kien, ve-sinh
- */
+
+ //Hàm lấy danh sách sản phẩm
+//Có thể lọc theo category: thuc-an, do-choi, phu-kien, ve-sinh
+
 function getProducts() {
     // Lấy category từ URL nếu có (ví dụ: product.php?action=list&category=thuc-an)
     $category = isset($_GET['category']) ? $_GET['category'] : '';
@@ -29,9 +29,9 @@ function getProducts() {
     }
 }
 
-/**
- * Hàm lấy chi tiết một sản phẩm cụ thể
- */
+
+ //Hàm lấy chi tiết một sản phẩm cụ thể
+ 
 function getProductDetail() {
     $id = isset($_GET['id']) ? $_GET['id'] : '';
 
@@ -51,9 +51,9 @@ function getProductDetail() {
     }
 }
 
-/**
- * Hàm thêm sản phẩm mới (Dành cho Admin)
- */
+
+ //Hàm thêm sản phẩm mới (Dành cho Admin)
+ 
 function addProduct() {
     $name        = $_POST['name'];
     $description = $_POST['description'];
@@ -76,7 +76,7 @@ function addProduct() {
     }
 }
 
-// --- Xử lý Request ---
+// Xử lý Request
 $method = $_SERVER["REQUEST_METHOD"];
 
 if ($method == "GET") {
