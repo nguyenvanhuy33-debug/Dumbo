@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-soft: #fff7fb;
+    --bg-warm: #fffaf0;
+    --panel: rgba(255, 255, 255, 0.85);
+    --panel-strong: #ffffff;
+    --text-main: #4b3c5d;
+    --text-soft: #7b6c8f;
+    --rose: #ff8fb2;
+    --rose-deep: #ff6f9f;
+    --mint: #9de7d7;
+    --lavender: #c8b8ff;
+    --line: rgba(188, 152, 212, 0.35);
+    --shadow: 0 14px 34px rgba(191, 161, 219, 0.2);
+}
+
+body {
+    margin: 0;
+    color: var(--text-main);
+    font-family: "Nunito", "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(255, 190, 212, 0.45) 0, rgba(255, 190, 212, 0.05) 30%),
+        radial-gradient(circle at 90% 18%, rgba(185, 255, 236, 0.55) 0, rgba(185, 255, 236, 0.06) 30%),
+        linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-warm) 48%, #f9f5ff 100%);
+    min-height: 100vh;
+}
+
+.page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto 32px;
+    padding: 22px 0 20px;
+    position: relative;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 10px 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff3f8 100%);
+    color: var(--text-main);
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(188, 152, 212, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 111, 159, 0.45);
+    box-shadow: 0 14px 20px rgba(255, 111, 159, 0.2);
+}
+
+.chip-btn {
+    background: linear-gradient(120deg, #fff9ff 0%, #e9fff8 100%);
+}
+
+.top-panel {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 16px 16px 14px;
+    background: var(--panel);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--shadow);
+    animation: rise-in 0.6s ease;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.left-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.right-nav {
+    flex-shrink: 0;
+}
+
+.auth-btn {
+    line-height: 1.15;
+    min-width: 130px;
+    border-radius: 16px;
+    background: linear-gradient(140deg, #ffe6f0 0%, #f4ebff 100%);
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 18px;
+    margin: 18px auto 8px;
+    max-width: 600px;
+}
+
+.search input {
+    width: 100%;
+    height: 40px;
+    background: #ffffff;
+    color: var(--text-main);
+    border: 1px solid rgba(188, 152, 212, 0.35);
+    border-radius: 14px;
+    padding: 0 14px;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(132, 102, 158, 0.12);
+}
+
+.search input::placeholder {
+    color: #b7a9c8;
+}
+
+.search button {
+    border-radius: 14px;
+    background: linear-gradient(125deg, var(--rose) 0%, #ff9bc0 32%, #ffc6a2 100%);
+    color: #ffffff;
+    border: 0;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 30px;
+    margin: 38px 38px 56px;
+    padding-right: 190px;
+}
+
+.product-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.product-col > button {
+    min-height: 42px;
+    min-width: 84px;
+    padding: 8px 18px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #ffffff 0%, #f8fffd 100%);
+}
+
+.item {
+    width: 82px;
+    height: 42px;
+    border: 1px dashed rgba(188, 152, 212, 0.8);
+    border-radius: 13px;
+    background: linear-gradient(150deg, #ffffff 0%, #fff6fb 100%);
+    box-shadow: 0 8px 14px rgba(205, 162, 216, 0.18);
+}
+
+.social {
+    position: fixed;
+    right: 10px;
+    top: 42px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    width: 122px;
+    min-height: 430px;
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(180deg, #fff7fc 0%, #f2fffb 100%);
+    box-shadow: var(--shadow);
+    animation: rise-in 0.75s ease;
+}
+
+.social button {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+    border-radius: 14px;
+}
+
+.footer {
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 18px 40px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(120deg, #fff9ff 0%, #fffdf5 100%);
+    box-shadow: var(--shadow);
+    animation: rise-in 0.85s ease;
+}
+
+.footer p {
+    margin: 8px 0;
+    font-family: "Baloo 2", "Nunito", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #5d4a74;
+}
+
+.footer p span {
+    color: var(--rose-deep);
+    font-weight: 700;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1100px) {
+    .catalog {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        padding-right: 0;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .social {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 16px;
+        margin-bottom: 18px;
+        padding: 14px;
+    }
+
+    .social button {
+        width: 140px;
+    }
+
+    .footer p {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        width: calc(100% - 16px);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .right-nav {
+        align-self: flex-end;
+    }
+
+    .search {
+        grid-template-columns: 1fr;
+        max-width: none;
+        gap: 10px;
+    }
+
+    .search button {
+        width: 100%;
+    }
+
+    .catalog {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer {
+        padding: 16px;
+    }
+
+    .footer p {
+        font-size: 19px;
+    }
+}
