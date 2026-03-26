@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống Dumbo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng nhập / Đăng ký</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <div class="btn-group">
+                <button onclick="auth('login')">Đăng nhập</button>
+                <button onclick="auth('register')" class="secondary">Đăng ký</button>
+            </div>
+        </div>
+        <p id="auth-msg"></p>
+
+        <hr>
+
+        <h2>Đặt hàng</h2>
+        <div class="form-group">
+            <input type="text" id="prod_name" placeholder="Tên sản phẩm">
+            <input type="number" id="prod_qty" placeholder="Số lượng">
+            <input type="number" id="prod_price" placeholder="Tổng giá">
+            <button onclick="placeOrder()">Đặt hàng ngay</button>
+        </div>
+        <p id="order-msg"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
