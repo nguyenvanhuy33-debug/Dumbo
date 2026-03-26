@@ -3,15 +3,16 @@
 }
 
 :root {
-    --pink-100: #ffe9f3;
-    --pink-200: #ffd7ea;
+    --pink-100: #f8f2ff;
+    --pink-200: #efe7ff;
     --peach-100: #fff1de;
     --mint-100: #e7fff7;
     --purple-200: #d9ccff;
-    --text-main: #5f4a72;
-    --text-soft: #8a749f;
-    --line: rgba(173, 138, 205, 0.32);
-    --shadow-soft: 0 14px 30px rgba(169, 137, 199, 0.2);
+    --accent-strong: #2f9c89;
+    --text-main: #30485a;
+    --text-soft: #5d778a;
+    --line: rgba(124, 157, 176, 0.28);
+    --shadow-soft: 0 14px 30px rgba(90, 120, 139, 0.18);
 }
 
 body {
@@ -19,7 +20,7 @@ body {
     color: var(--text-main);
     font-family: "Nunito", "Segoe UI", sans-serif;
     background:
-        linear-gradient(rgba(255, 247, 252, 0.84), rgba(246, 241, 255, 0.88)),
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(248, 252, 255, 0.94)),
         url("https://thietkeshop247.com.vn/kcfinder/upload/images/Thiet-ke-shop-thu-cung-nho.jpg(2).jpg") center/cover fixed no-repeat;
     min-height: 100vh;
 }
@@ -27,7 +28,7 @@ body {
 .page {
     width: min(1100px, calc(100% - 28px));
     margin: 0 auto;
-    padding: 18px 0 24px;
+    padding: 18px 0 28px;
     position: relative;
 }
 
@@ -45,7 +46,7 @@ button {
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 10px 16px;
-    background: linear-gradient(170deg, #ffffff 0%, #fff2f8 100%);
+    background: linear-gradient(170deg, #ffffff 0%, #f2fbff 100%);
     color: var(--text-main);
     font-weight: 700;
     cursor: pointer;
@@ -54,7 +55,7 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(174, 133, 208, 0.22);
+    box-shadow: 0 8px 16px rgba(103, 152, 179, 0.22);
 }
 
 .topbar {
@@ -65,8 +66,9 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 22px;
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.84);
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -83,7 +85,7 @@ button:hover {
 
 .main-nav a {
     border: 1px solid var(--line);
-    background: #fff;
+    background: linear-gradient(180deg, #ffffff 0%, #f3fbff 100%);
     border-radius: 999px;
     padding: 8px 14px;
     font-weight: 700;
@@ -91,10 +93,11 @@ button:hover {
 
 .auth-btn {
     border-radius: 999px;
-    background: linear-gradient(130deg, #ff9dc1 0%, #ffc8a2 100%);
+    background: linear-gradient(130deg, #31b9a0 0%, #77c8ee 100%);
     color: #fff;
     border: 0;
     padding-inline: 18px;
+    box-shadow: 0 10px 16px rgba(70, 165, 171, 0.35);
 }
 
 .hero {
@@ -109,8 +112,9 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 24px;
     padding: 22px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.96);
     box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(7px);
 }
 
 .eyebrow {
@@ -134,6 +138,7 @@ button:hover {
 .hero-text > p {
     margin-top: 0;
     color: var(--text-soft);
+    max-width: 630px;
 }
 
 .search-box {
@@ -154,8 +159,25 @@ button:hover {
 .search-box button {
     border: 0;
     border-radius: 14px;
-    background: linear-gradient(130deg, #ff9abc 0%, #ffc09f 100%);
+    background: linear-gradient(130deg, #34b99c 0%, #68c1ea 100%);
     color: #fff;
+}
+
+.hero-highlights {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hero-highlights span {
+    border: 1px solid var(--line);
+    background: linear-gradient(160deg, #ffffff 0%, #f0fff9 100%);
+    color: var(--text-soft);
+    font-weight: 700;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    padding: 5px 11px;
 }
 
 .hero-card {
@@ -168,9 +190,19 @@ button:hover {
     font-family: "Baloo 2", "Nunito", sans-serif;
 }
 
-.hero-card p {
-    margin: 8px 0;
+.hero-card ul {
+    margin: 0;
+    padding-left: 18px;
     color: #6c557e;
+    line-height: 1.6;
+}
+
+.hero-card button {
+    margin-top: 14px;
+    border: 0;
+    width: 100%;
+    color: #fff;
+    background: linear-gradient(130deg, #31b79d 0%, #6cc0e5 100%);
 }
 
 .category-section,
@@ -178,7 +210,7 @@ button:hover {
     margin-top: 18px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.96);
     padding: 18px;
     box-shadow: var(--shadow-soft);
 }
@@ -212,21 +244,87 @@ button:hover {
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 14px;
-    background: linear-gradient(140deg, #fff 0%, #fff7fb 100%);
+    background: linear-gradient(140deg, #fff 0%, #f4fbff 100%);
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-height: 120px;
+    min-height: 240px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.product-card span {
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 18px rgba(99, 142, 167, 0.22);
+}
+
+.thumb {
+    width: 100%;
+    height: 110px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.thumb-1 {
+    background: linear-gradient(140deg, #ffe7f2 0%, #fff8ea 100%);
+}
+
+.thumb-2 {
+    background: linear-gradient(140deg, #e6fff7 0%, #f6ecff 100%);
+}
+
+.thumb-3 {
+    background: linear-gradient(140deg, #ffe6f1 0%, #f3f0ff 100%);
+}
+
+.thumb-4 {
+    background: linear-gradient(140deg, #fff4de 0%, #eefbff 100%);
+}
+
+.thumb-5 {
+    background: linear-gradient(140deg, #eafff3 0%, #fff1fb 100%);
+}
+
+.thumb-6 {
+    background: linear-gradient(140deg, #f3ebff 0%, #fff4e7 100%);
+}
+
+.product-card .title {
     font-weight: 700;
+    font-size: 1rem;
+}
+
+.desc {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.card-meta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-meta strong {
+    color: #355770;
+}
+
+.card-meta span {
+    font-size: 0.75rem;
+    border-radius: 999px;
+    background: #e5faf5;
+    color: var(--accent-strong);
+    font-weight: 800;
+    padding: 4px 8px;
 }
 
 .product-card button {
-    margin-top: auto;
+    margin-top: 0;
     border-radius: 14px;
     padding: 8px 10px;
+    border: 1px solid rgba(72, 170, 158, 0.45);
 }
 
 .social-dock {
@@ -235,7 +333,7 @@ button:hover {
     top: 118px;
     z-index: 5;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.96);
     box-shadow: var(--shadow-soft);
     border-radius: 18px;
     padding: 10px;
@@ -247,16 +345,30 @@ button:hover {
 .social-dock a {
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 10px 12px;
-    font-weight: 700;
+    width: 46px;
+    height: 46px;
     background: linear-gradient(160deg, #fff 0%, #f8fffc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s ease;
+}
+
+.social-dock a:hover {
+    transform: translateX(-3px);
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: #2f9f8d;
 }
 
 .footer {
     margin-top: 18px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.97);
     padding: 18px 20px;
     box-shadow: var(--shadow-soft);
 }
@@ -267,7 +379,7 @@ button:hover {
 }
 
 .footer span {
-    color: #eb6a9e;
+    color: #2f9f8d;
     font-weight: 800;
 }
 
@@ -318,6 +430,10 @@ button:hover {
         grid-template-columns: 1fr;
     }
 
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
     .social-dock {
         width: 100%;
         justify-content: space-between;
@@ -325,6 +441,6 @@ button:hover {
 
     .social-dock a {
         flex: 1;
-        text-align: center;
+        width: auto;
     }
 }
