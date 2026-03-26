@@ -1,0 +1,37 @@
+📂 Dumbo (Thư mục gốc)
+
+-📂frontend 
+
+--📂 client (Chứa 5 mục dành cho khách)    
+
+(+) 📂 Home (trang chủ)
+
+(+) 📂 Store (cửa hàng)
+
+(+) 📂 Checkout (mua hàng, thông tin cá nhân)
+
+(+) 📂 Support (hỗ trợ)
+
+(+) 📂 Login (đăng nhập, đăng ký)
+
+--📂 admin (Chứa trang quản trị)
+
+(+) 📂 Dashboard (tổng quan hệ thống)
+
+(+) 📂 Products (quản lý thú cưng)
+
+(+) 📂 Orders (quản lý đơn hàng)
+
+-📂backend
+
+(+) config.php (kết nối database)
+
+(+) auth.php (đăng nhập, đăng ký)
+
+(+) products.php (quản lý sản phẩm)
+
+(+) orders.php (quản lý đơn hàng)
+
+-📂database
+
+(+) schema.sql (tạo bảng và quan hệ dữ liệu)

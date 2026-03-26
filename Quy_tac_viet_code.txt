@@ -1,0 +1,23 @@
+Quy tắc viết code
+
+Đặt tên hàm, biến rõ nghĩa, thể hiện đúng chức năng.
+Mỗi hàm chỉ thực hiện một nhiệm vụ cụ thể.
+Code phải được trình bày rõ ràng, có thụt lề.
+Trước mỗi hàm cần có comment mô tả chức năng.
+Chỉ comment những bước xử lý quan trọng.
+Không comment quá nhiều hoặc từng dòng.
+Kiểm tra dữ liệu trước khi xử lý. 
+
+Ví dụ minh họa
+
+// Hàm xử lý đăng nhập
+function loginUser() {
+
+    // Lấy dữ liệu từ form
+    $username = $_POST['username'];
+
+    // Kiểm tra dữ liệu
+    if ($username == "") {
+        echo "Thiếu dữ liệu";
+    }
+}
