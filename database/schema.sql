@@ -1,5 +1,4 @@
 -- Tạo database
-CREATE DATABASE dumbo;
 USE dumbo;
 
 -- Bảng users (người dùng)
