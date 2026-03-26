@@ -3,15 +3,18 @@
 }
 
 :root {
-    --anime-indigo: #8f7fd8;
-    --anime-violet: #a98ce8;
-    --anime-cyan: #86dfff;
-    --anime-pink: #ff9fd8;
-    --anime-soft: #f6f3ff;
-    --text-main: #3f4f67;
-    --text-soft: #6f7f9a;
-    --line: rgba(162, 171, 210, 0.34);
-    --shadow-soft: 0 10px 22px rgba(138, 144, 179, 0.24);
+    --anime-indigo: #3f5a7a;
+    --anime-violet: #4f6a8c;
+    --anime-cyan: #7da7c7;
+    --anime-pink: #9db4c8;
+    --anime-soft: #eef4f8;
+    --text-main: #1f2e40;
+    --text-soft: #4e6279;
+    --line: rgba(90, 114, 142, 0.32);
+    --shadow-soft: 0 10px 22px rgba(40, 56, 77, 0.16);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --section-gap: 20px;
 }
 
 body {
@@ -19,9 +22,9 @@ body {
     color: var(--text-main);
     font-family: "Nunito", "Segoe UI", sans-serif;
     background:
-        radial-gradient(circle at 10% 15%, rgba(255, 159, 216, 0.2) 0, rgba(255, 159, 216, 0) 36%),
-        radial-gradient(circle at 88% 22%, rgba(134, 223, 255, 0.22) 0, rgba(134, 223, 255, 0) 38%),
-        linear-gradient(135deg, rgba(245, 242, 255, 0.9), rgba(236, 246, 255, 0.88)),
+        radial-gradient(circle at 8% 10%, rgba(190, 214, 230, 0.08) 0, rgba(190, 214, 230, 0) 40%),
+        radial-gradient(circle at 88% 20%, rgba(203, 223, 236, 0.08) 0, rgba(203, 223, 236, 0) 42%),
+        linear-gradient(130deg, rgba(248, 252, 255, 0.72), rgba(242, 249, 253, 0.7)),
         url("https://thietkeshop247.com.vn/kcfinder/upload/images/Thiet-ke-shop-thu-cung-nho.jpg(2).jpg") center/cover fixed no-repeat;
     min-height: 100vh;
 }
@@ -31,21 +34,18 @@ body::before {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background: repeating-linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.02) 0,
-        rgba(255, 255, 255, 0.02) 2px,
-        rgba(255, 255, 255, 0) 2px,
-        rgba(255, 255, 255, 0) 18px
-    );
-    mix-blend-mode: soft-light;
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .page {
-    width: min(1100px, calc(100% - 28px));
+    width: min(1180px, calc(100% - 28px));
     margin: 0 auto;
     padding: 18px 0 28px;
     position: relative;
+}
+
+.page > * + * {
+    margin-top: var(--section-gap);
 }
 
 .page::before {
@@ -75,27 +75,35 @@ button {
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 10px 16px;
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(234, 248, 255, 0.92) 100%);
+    background: transparent;
     color: var(--text-main);
     font-weight: 700;
+    letter-spacing: 0.2px;
     cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.2s ease;
+    transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(136, 146, 196, 0.32);
+    background: rgba(255, 255, 255, 0.26);
+    border-color: rgba(79, 106, 140, 0.5);
+    box-shadow: 0 8px 16px rgba(53, 76, 103, 0.22);
+}
+
+button:focus-visible {
+    outline: 2px solid rgba(79, 106, 140, 0.7);
+    outline-offset: 2px;
 }
 
 .topbar {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 14px;
     border: 1px solid var(--line);
-    border-radius: 22px;
+    border-radius: var(--radius-lg);
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(8px);
 }
@@ -110,6 +118,7 @@ button:hover {
 .main-nav {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
 .main-nav a {
@@ -121,27 +130,33 @@ button:hover {
 }
 
 .auth-btn {
+    justify-self: end;
     border-radius: 999px;
-    background: linear-gradient(130deg, #ffacdd 0%, #91dfff 100%);
-    color: #fff;
-    border: 0;
+    background: linear-gradient(135deg, #d94f97 0%, #f6a6c8 100%);
+    color: #ffffff;
+    border: 1px solid rgba(170, 56, 115, 0.72);
     padding-inline: 18px;
-    box-shadow: 0 8px 16px rgba(163, 163, 220, 0.34);
+    box-shadow: 0 8px 16px rgba(166, 65, 118, 0.26);
+}
+
+.auth-btn:hover {
+    background: linear-gradient(135deg, #c84388 0%, #ef95bc 100%);
+    border-color: rgba(147, 42, 96, 0.82);
 }
 
 .hero {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     gap: 18px;
-    margin-top: 16px;
+    align-items: stretch;
 }
 
 .hero-text,
 .hero-card {
     border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 22px;
-    background: rgba(255, 255, 255, 0.76);
+    border-radius: calc(var(--radius-lg) + 2px);
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(7px);
 }
@@ -151,9 +166,10 @@ button:hover {
     margin: 0;
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(145, 223, 255, 0.24);
-    color: #48627f;
-    font-weight: 700;
+    background: linear-gradient(135deg, rgba(217, 79, 151, 0.28) 0%, rgba(246, 166, 200, 0.32) 100%);
+    color: #6b1843;
+    border: 1px solid rgba(170, 56, 115, 0.42);
+    font-weight: 800;
     font-size: 0.82rem;
 }
 
@@ -173,7 +189,7 @@ button:hover {
 .search-box {
     margin-top: 18px;
     display: grid;
-    grid-template-columns: 1fr 150px;
+    grid-template-columns: 1fr 160px;
     gap: 10px;
 }
 
@@ -191,10 +207,10 @@ button:hover {
 }
 
 .search-box button {
-    border: 0;
+    border: 1px solid rgba(79, 106, 140, 0.5);
     border-radius: 14px;
-    background: linear-gradient(130deg, #f9a8d6 0%, #8edcfd 100%);
-    color: #fff;
+    background: transparent;
+    color: var(--text-main);
 }
 
 .hero-highlights {
@@ -215,7 +231,7 @@ button:hover {
 }
 
 .hero-card {
-    background: linear-gradient(160deg, rgba(247, 239, 255, 0.9) 0%, rgba(234, 245, 255, 0.9) 100%);
+    background: linear-gradient(160deg, rgba(244, 249, 253, 0.92) 0%, rgba(235, 244, 251, 0.92) 100%);
 }
 
 .hero-card-title {
@@ -233,19 +249,18 @@ button:hover {
 
 .hero-card button {
     margin-top: 14px;
-    border: 0;
+    border: 1px solid rgba(79, 106, 140, 0.5);
     width: 100%;
-    color: #fff;
-    background: linear-gradient(130deg, #f7a8d8 0%, #8eddfd 100%);
+    color: var(--text-main);
+    background: transparent;
 }
 
 .category-section,
 .products-section {
-    margin-top: 18px;
     border: 1px solid var(--line);
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 0.78);
-    padding: 18px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 22px;
     box-shadow: var(--shadow-soft);
 }
 
@@ -259,30 +274,33 @@ button:hover {
 .category-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
-    gap: 10px;
+    gap: 12px;
 }
 
 .category-grid button {
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 14px 10px;
-    background: linear-gradient(130deg, rgba(248, 240, 255, 0.94) 0%, rgba(231, 246, 255, 0.94) 100%);
+    background: transparent;
+    min-height: 50px;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 14px;
+    gap: 16px;
+    align-items: stretch;
 }
 
 .product-card {
     border: 1px solid var(--line);
     border-radius: 18px;
-    padding: 14px;
-    background: linear-gradient(140deg, rgba(251, 247, 255, 0.92) 0%, rgba(240, 249, 255, 0.92) 100%);
+    padding: 16px;
+    background: linear-gradient(140deg, rgba(248, 252, 255, 0.94) 0%, rgba(238, 247, 252, 0.92) 100%);
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-height: 240px;
+    min-height: 260px;
+    height: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -359,6 +377,7 @@ button:hover {
     border-radius: 14px;
     padding: 8px 10px;
     border: 1px solid rgba(160, 183, 219, 0.55);
+    background: transparent;
 }
 
 .social-dock {
@@ -369,7 +388,7 @@ button:hover {
     border: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.8);
     box-shadow: var(--shadow-soft);
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -411,11 +430,10 @@ button:hover {
 }
 
 .footer {
-    margin-top: 18px;
     border: 1px solid var(--line);
-    border-radius: 22px;
+    border-radius: var(--radius-lg);
     background: rgba(255, 255, 255, 0.82);
-    padding: 18px 20px;
+    padding: 20px;
     box-shadow: var(--shadow-soft);
 }
 
@@ -430,6 +448,15 @@ button:hover {
 }
 
 @media (max-width: 1100px) {
+    .topbar {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .auth-btn {
+        justify-self: start;
+    }
+
     .hero {
         grid-template-columns: 1fr;
     }
@@ -451,8 +478,7 @@ button:hover {
     }
 
     .topbar {
-        flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
     }
 
     .main-nav {
